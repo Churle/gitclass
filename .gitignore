@@ -1,2 +1,3 @@
-/node_modulos  
+# Pasta e arquivos ignorados para a aula
 .env.local
+/node_modulos
