@@ -120,7 +120,7 @@ SOBRE COMMIT → AULA 7
 
 5.5-		-n ou –dry-run:
           Uma abreviação para --dry-run.
-          <git rm -n <nome_do_arquivo>
+          <git rm -n nome_do_arquivo>
 
 5.6-		-q ou –quiet:
           Suprime mensagens de saída, exceto erros e mensagens de status.
@@ -192,3 +192,171 @@ Adicionando novos arquivos → Aula 10
 
 Recebendo Arquivos Pull → Aula 11 
 1-	Exemplo: Criar o README.md para interagir com o 	repositorio inicial.
+
+2-	Vai haver uma verificacao de key, em caso de problemas 	utilizar :
+				
+	ssh agent:   eval “$(ssh-agent -s)”
+
+	adicionando a chave: ssd-add ~ /.sshid_ed25519
+
+Clonando Repositórios → Aula 12 
+
+1-	Criar uma pasta “clone” dentro da paste que esta o 	projeto.
+
+2-	Copiar o projeto no github.
+	
+3-	Abrir pelo gitbash e digitar: 
+
+	GIT CLONE git@github.com:Churle/gitclass.git
+
+4-	Caso queira mudar de repositorio, apagar a pasta nova 	criada dentro da pasta clone e :
+
+	$ CD .. (/com/caminho/diretorio/novo)
+
+5-	Caso quiser conferir qual repositorio esta utilizando:
+
+	pwd
+
+6-	Caso queira ver o conteudo do diretorio usar:
+
+	ls ou ls/path/to/your/directory
+
+7-	Portanto usar consecutivamente:
+	
+	$ cd..
+	$ ls
+	$ cd cloneprojeto1
+	$ git clone “nome do repositorio” espaco+ponto
+
+
+Acessando LOGS → Aula 13
+
+1-	Comando novo <git log> , mostrando o ultimo commit 	no 	topo sempre.
+
+2-	Press <q> para sair.
+
+Revertendo arquivos com checkout ou restore → Aula 14
+
+1-	Comando <git restore “nome do arquivo”>.
+
+2-	Comando <git checkout “nome do arquivo”>.
+
+OBS.→ 	o simbolo $ dentro do terminal, significa que o 			operador esta operando o sistema como usuario comum.
+
+OBS2.→ 	o Visual studios e uma IDE = integrate development 		environment.
+
+Como ignorar arquivos → Aula 15
+
+OBS.→ 	utilizar o arquivo <.env.local> para criar uma pagina 		contendo as variaveis do projeto, como senha_api por 		exemplo.
+		
+		$ .env.local
+			senha_api
+			senha_api = xxxx
+
+OBS2.→ 	Geralmente o projeto tera a pasta <node_module> 			antes>
+
+1-		Criando o arquivo de ignorar <.gitignore> .
+
+2-		Todos os arquivos dentro do arquivo acima serao 			ignorados, PORTANTO não serao enviados ao repositorio 		externo, exemplo abaixo:
+
+		<.gitignore>	
+			/node_modules (pasta criada para aula)
+			.env.local (arquivo criado para aula)
+
+Dando o comando RESETE → Aula 16
+
+1-		Esse commit não volta atras então tomar cuidado.
+
+2-		Comando <git reset -- hard origin/ main> 
+		(eles esta voltando para origin da brach main, porque 		é a única que tenho no momento, se tivesse mais 			poderiamos escolher).
+
+3-		Elá volta para a configuração padrão designada.
+
+O que são BRANCHS → Aula 17
+
+1-		Branch é simplesmente uma maneira que o git 				disponibiliza para separar projetos.
+
+2-		A Branch inicial se chamará main
+Criando Branch → Aula 18
+
+1-		<git branch> , mostra qual branch temos e qual esta 		ativa no momento. Importante deixar claro que o certo 		e criar as novas branchs a partir da branch main, 			portante sempre conferir com <git checkout>
+
+2-		Criando a brach nova com o comando: 
+			<git branch “nome”> 
+		ex:
+
+		< git branch pagina_home> 
+		Utilizar sempre letras minusculas e separar as 			palavras com underline (por convencao).
+
+Mudando de branch e criando uma abrindo direto nela → Aula 19.
+
+1-		A principio criamos a branch “pagina_home” para 			trabalhar no index sem precisar mexer na branch main.
+
+2-		Para trocar de branch usar o comando:
+		
+		<git checkout “nome”>
+
+3-		Para enviar a branch nova no repositorio externo:
+		
+		<git push origin nome_nome >
+
+OBS.→ 	O nome UPSTREAM significa branch remota 					correspondente.
+
+
+4-		Para SETAR a branch com a upstream usar :
+
+		<git push --set-upstream origin nome_nome>
+
+5-		Para criar a BRANCH e ja iniciar ela, utilizar o 			comando:
+	
+		<git checkout -b “nova_branch”>
+
+Deletando uma BRANCH → Aula 20
+
+1-		Usar o comando: <git branch -d nome_nome>
+		Contudo isso apenas exclui o repositorio local!
+
+2-		Para deletar do repositorio remoto (ex GIT HUB), usar 		o comando: <git push origin -- delete nome_nome >
+
+Unindo branch GIT MERGE pelo GITHUB → Aula 21
+
+1-		Antes de mais nada, retornar a BRANCH MAIN.
+2-		Comando para MERGE: <git merge nome_nome>
+3-		Se fizer MERGE por meio de PUSH REQUEST direto do GIT 		HUB, lembrar de atualizar o repositorio local ou 			<git pull>.
+
+
+
+Realizando Simulacao de trabalho com BRANCHS ultrapassadas →Aula 22.		
+
+1-		Alterar a branch main, faz as outras ficarem 		ultrapassadas/ out off date.
+
+2-		Estando em outra branch e querendo atualizar, 		usar o comando:
+
+		<git merge main> → De forma que puxaremos as 		atualizacoes da branch desejada para a branch 		que 	estamos.
+
+GIT STASH → Aula 23.
+
+1-		Git Stash e um comando que volta para as 					configuracoes originais do meu ultimo PUSH (e como se 		fosse um rewind), e o comando e :
+			<git stash>.	
+
+2-		Stash apaga as modificacoes voltando ao original do 		ultimo push e cria um arquivo em formato de codigo 		ex: d80cf0a.
+
+
+
+
+Recuperation um STASH → Aula 24.
+
+1-		Utilizando o comando: <git stash list>, e possivel 		ver o que temos armazenado no stash.
+
+2-		Utilizando o comando: <git stash apply “1”>, e 			possivel retornar o stash de acordo com a ordem 			deles, portanto usei o 1 no caso de termos 2 ou mais 		stashs guardados.
+
+3-		Utilizando o comando: <git stash pop>, sera possivel 		utilizar o stash mais recente e o remover da lista ao 		mesmo tempo.
+
+----------------------------((Curso Finalizado))
+
+Extraindo arquivos de outras branchs → Estudo 1
+
+1-		Utilizar <git checkout branch_Name> para se 			mover a branch  que voce quer receber a 				pagina.
+
+2-		Em seguida utilizar o comando:						 <git checkout b	ranch_Name arquivo_name.xxx>.
+
