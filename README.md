@@ -1,4 +1,17 @@
-GIT e GITHUB  AULAS 1, 2 e 3 
+<h1>Git studies</h1>
+
+## 🎯tecnologias
+  <img src = "https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)">
+  <img src = "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)">
+  <img src = "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)">
+
+# Team 
+
+  <img src = "https://avatars.githubusercontent.com/u/147282295?s=96&v=4">
+
+<h2>📖Sobre</h2>
+  
+<p>GIT e GITHUB  AULAS 1, 2 e 3 
 
 → Controle de histórico .
 → Trabalhar em equipe no mesmo projeto .
@@ -358,5 +371,7 @@ Extraindo arquivos de outras branchs → Estudo 1
 
 1-		Utilizar <git checkout branch_Name> para se 			mover a branch  que voce quer receber a 				pagina.
 
-2-		Em seguida utilizar o comando:						 <git checkout b	ranch_Name arquivo_name.xxx>.
+2-		Em seguida utilizar o comando:						 <git checkout b	ranch_Name arquivo_name.xxx>. 
+
+</p>
 
